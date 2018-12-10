@@ -37,11 +37,25 @@ function stringReversal(str) {
     //         revString = char + revString;
     //     }
 
-    let revString = '';
-    str.split('').forEach(char => {
-        revString = char + revString;
-    });
-    return revString;
+    // let revString = '';
+    // str.split('').forEach(char => {
+    //     revString = char + revString;
+    // });
+    // return revString;
+
+    return str.split('').reduce((revString, char) => {
+        return char + revString;
+    }, '');
+
 }
 
-console.log(stringReversal('Trenton'));
+// Capitalize the first letter of the sentence
+function capitalLetter(str){
+ return str.split(' ').map(function(word){
+    //  return word;
+  return word[0].toUpperCase() +  word.slice(1);
+ })
+ .join(' ');
+}
+
+console.log(capitalLetter('trenton owns javascript'));
